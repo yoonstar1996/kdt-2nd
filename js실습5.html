@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+        <script>
+
+            function calculate(){
+                // var numOne = Number(document.getElementById("one").value);
+                var numOne = Number($("#one").val());
+                // var operator = String(document.getElementById("three").value);
+                var operator = String($("#three").val());
+                // var numTwo = Number(document.getElementById("two").value);
+                var numTwo = Number($("#two").val());
+                // var sum = document.getElementById("four");
+                var sum = $("#four")[0];
+
+                if(operator == "+"){
+                    sum.value = numOne + numTwo;
+                } else if(operator == "-"){
+                    sum.value = numOne - numTwo;
+                } else if(operator == "*"){
+                    sum.value = numOne * numTwo;
+                } else if(operator == "/"){
+                    sum.value = numOne / numTwo;
+                }
+
+                }
+
+            function reset(){
+                // document.getElementById("one").value="";
+                $("#one").val("");
+                // document.getElementById("two").value="";
+                $("#two").val("");
+                // document.getElementById("three").value="";
+                $("#three").val("");
+                // document.getElementById("four").value="";
+                $("#four").val("");
+            }
+            
+        </script>
+    </head>
+    <body class="body1">
+        <div>값1: <input class="zero" type="text" id="one"></div>
+        <div>값2: <input class="zero" type="text" id="two"></div>
+        <div>연산자: <input class="zero" type="text" id="three"></div>
+        <div>결과: <input class="zero" type="text" id="four"></div>
+        <button onclick="calculate()">계산하기</button>
+        <button onclick="reset()">초기화</button>
+    </body>
+    </html>
