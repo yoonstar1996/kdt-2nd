@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                /* background-color: brown; */
+            }
+        </style>
+    </head>
+    <body>
+        <select>
+            <option>선택</option>
+            <option id ="1" value="1">빨</option>
+            <option id ="2" value="2">주</option>
+            <option id ="3" value="3">노</option>
+            <option id ="4" value="4">초</option>
+            <option id ="5" value="5">파</option>
+            <option id ="6" value="6">남</option>
+            <option id ="7" value="7">보</option>
+        </select>
+        <br>
+        <div id="color"></div>
+        <script>
+            $("select").change(function(){
+                if($("select").val() == 1){
+                    $("#color").css("background-color", "red");
+                } else if ($("select").val() == 2){
+                    $("#color").css("background-color", "orange");
+                } else if ($("select").val() == 3){
+                    $("#color").css("background-color", "yellow");
+                } else if ($("select").val() == 4){
+                    $("#color").css("background-color", "green");
+                } else if ($("select").val() == 5){
+                    $("#color").css("background-color", "blue");
+                } else if ($("select").val() == 6){
+                    $("#color").css("background-color", "#210B61");
+                } else if ($("select").val() == 7){
+                    $("#color").css("background-color", "purple");
+                }
+            })
+        </script>
+    </body>
+</html>
