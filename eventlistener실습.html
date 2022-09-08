@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+        <style>
+            #menu:hover{
+                cursor: pointer;
+            }
+            #content{
+                height: 0;
+                overflow-y: hidden;
+                /* background-color: rgb(231, 231, 231); */
+                background-color: rgb(214, 214, 214);
+                cursor: auto;
+                transition: 0.01s;
+            }
+            div{
+                font-size: 20px;
+            }
+            #contentgermany{
+        height:0;
+        overflow-y: hidden;
+        transition:0.01s;
+      }
+        </style>
+    </head>
+    <body>
+        <div id="menu">Part2 - CSS
+            <div id="content">
+                <div class="cm">시작하기 - CSS(Cascading Style Sheets)란</div>
+                <div>CSS 속성 적용 방법(id, class)</div>
+                <div id="germany">독일</div>
+                <div id="contentgermany">
+                    <div id="childrengermany">
+                        <div>벡스(Beck's)</div>
+                        <div>파울라너(Paulaner)</div>
+                        <div>바이엔슈테판(Weihenstephan)</div>
+                        <div>외팅어(Oettinger)</div>
+                        <div>에어딩어(erdinger)</div>
+                        <div>크롬바허(Krombacher)</div>
+                        <div>바슈타이너(Warsteiner)</div>
+                        <div>뢰벤브로이(Löwenbräu)</div>
+                        <div>답(DAB)</div>
+                        <div>디벨스 알트(Diebels Alt)</div>
+                        <div>비트부어거(Bitburger)</div>
+                        <div>슈나이더(Schineider)</div>
+                        <div>슈무커(Schmucker)</div>
+                    </div>
+                </div>
+                <div>CSS 속성 (1) - position</div>
+                <div>CSS 속성 (2) - z-index</div>
+                <div>CSS 속성 (3) - transform</div>
+                <div>CSS 속성 (4) - display</div>
+                <div>CSS 속성 (5) - margin과 padding</div>
+                <div>CSS 속성 (6) - animation과 다양한 효과</div>
+                <div>종합 실습</div>
+            </div>
+        </div>
+
+        
+        <script>
+        $("#menu").click(function(){
+      if($("#content").css("height") == 0+"px"){
+        var count = $(".cm").height()
+        var size = $("#content").children().length
+          $("#content").css("height", count * size);
+      } else {
+          $("#content").css("height", "0px");
+      }
+  })
+        $("#germany").click(function(){
+      if($("#contentgermany").css("height") == 0+"px"){
+        var count = $(".cm").height()
+        var size = $("#childrengermany").children().length
+          $("#contentgermany").css("height", count * size);
+      } else {
+          $("#contentgermany").css("height", "0px");
+      }
+  })
+        </script> 
+    </body>
+    </html>

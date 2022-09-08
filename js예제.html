@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            div { background-color: pink; }
+            p { background-color: skyblue; }
+            .textCss { color: red; }
+        </style>
+        <script>
+            function addNode(){
+                var div = document.getElementById("div1");
+                var p = document.createElement("p");
+                p.innerText = "삽입 버튼을 눌러 만들어진 p 태그";
+                p.className = "textCss";
+                p.id = "pId";
+                p.style="text-align:center;";
+                div.appendChild(p);
+            }
+            function writeNode(){
+                document.write("<p style='color:red;'>새로운p태그</p>");
+            }
+            function removeNode(){
+                var p = document.querySelector("#div1 > p");
+                p.remove();
+                //p.parentNode.removeChild(p);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            div 태그입니다.
+        </div>
+        <button type="button" onclick="addNode();">삽입</button>
+        <button type="button" onclick="writeNode();">전체변경</button>
+        <button type="button" onclick="removeNode();">삭제</button>
+    </body>
+</html
