@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      div > .orange {
+        color: red;
+      }
+      .orange {
+        color: blue;
+      }
+      body > div {
+        color: green;
+      }
+      h1 ~ ul {
+        color: lightblue;
+      }
+      h1 + h2 {
+        color: purple;
+      }
+      div > ul {
+        color: pink;
+      }
+      h1:hover {
+        color: brown;
+      }
+      h2:active {
+        color: aqua;
+      }
+      a:visited {
+        color: cornflowerblue;
+      }
+      .red-input:focus {
+        background: yellow;
+        color: red;
+      }
+
+      .blue-input:focus {
+        background: yellow;
+        color: blue;
+      }
+      input {
+        width: 70%;
+        height: 30px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>사과</li>
+        <li>딸기</li>
+        <li class="orange">오렌지</li>
+      </ul>
+      <div>당근</div>
+      <p>토마토</p>
+      <span class="orange">오렌지</span>
+    </div>
+
+    <ul>
+      1234
+    </ul>
+    <h1>
+      hover
+      <div>78</div>
+    </h1>
+    <h2>active</h2>
+    <ul>
+      910
+    </ul>
+    <a href="https://www.naver.com/" target="_blank">
+      <ul>
+        link
+      </ul>
+    </a>
+    <input class="red-input" value="저는 포커스를 받으면 빨갛게 됩니다." />
+    <br />
+    <input class="blue-input" value="저는 포커스를 받으면 파랗게 됩니다." />
+  </body>
+</html>

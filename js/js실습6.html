@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+        <meta charset="utf-8">
+        <style>
+            div{
+                text-align:left;
+            }
+        </style>
+        <script>
+            function write3(){
+                var tr = document.createElement("tr");
+                
+                var name = $("#name").val();
+                var content = $("#content").val();
+
+                var td1 = document.createElement("td");
+                td1.innerText = $("tr").length;
+                var td2 = document.createElement("td");
+                td2.innerText = name;
+                var td3 = document.createElement("td");
+                td3.innerText = content;
+                var td4 = document.createElement("td");
+                var date = new Date();
+                td4.innerText = date.getFullYear() + "년" + (date.getMonth()+1) + "월" + date.getDay() + "일 " + date.getHours() + "시" + date.getMinutes() + "분" + date.getSeconds() + "초";
+
+                var table = document.getElementById("table");
+
+                table.appendChild(tr);
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+
+                $("#name").val("");
+                $("#content").val("");
+            }
+        </script>
+    </head>
+    <body>
+        <div>방명록 입니다.</div><br>
+        <div>작성자 <input id="name" type="text" style="width:20%;"></div>
+        <div>내용 <input id="content" type="text" style="width:40%;"></div><br>
+        
+        <button onclick="write3()">작성</button>
+        
+        <table border="1" id="table" cellpadding="10" style="text-align:center; margin-top:30px;">
+            <tr>
+                <td width="10%">번호</td>
+                <td width="20%">작성자</td>
+                <td width="40%">내용</td>
+                <td width="30%">작성일</td>
+            </tr>
+        </table>
+    </body>
+    </html>
