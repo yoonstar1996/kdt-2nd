@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  </head>
+  <body>
+    <script>
+    swal({
+      title: "차트!",
+      text: "버튼을 누르세요!",
+      icon: "success",
+      button: "버튼",
+    });
+    </script>
+    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+    <script>
+      var xyValues = [
+        {x:50, y:7},
+        {x:60, y:8},
+        {x:70, y:8},
+        {x:80, y:9},
+        {x:90, y:9},
+        {x:100, y:9},
+        {x:110, y:10},
+        {x:120, y:11},
+        {x:130, y:14},
+        {x:140, y:14},
+        {x:150, y:15}
+      ];
+
+      new Chart("myChart", {
+        type: "scatter",
+        data: {
+          datasets: [{
+            pointRadius: 5,
+            pointBackgroundColor: "rgba(0,0,255,1)",
+            data: xyValues
+          }]
+        },
+      });
+    </script>
+    
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-2" style="background-color:red;">
+          <button type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="col col-lg-2" style="background-color:red;">
+            Tooltip on bottom
+        </div>
+        <div class="col-md-3" style="background-color:rgb(212, 119, 32);">
+         3
+        </div>
+        <div class="col col-sm-4" style="background-color:rgb(219, 216, 42);">
+          col col-sm-4
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3" style="background-color:rgb(29, 196, 14);">
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"    aria-controls="offcanvasBottom" style="background-color:rgb(29, 196, 14);">bottom offcanvas</button>
+
+          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+            <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasBottomLabel">서프라이즈</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body small">
+            col-3
+          </div>
+        </div>
+        </div>
+        <div class="col-md-6" style="background-color:rgb(51, 26, 190);">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:rgb(51, 26, 190);">
+              dropdown
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">col</a></li>
+              <li><a class="dropdown-item" href="#">md</a></li>
+              <li><a class="dropdown-item" href="#">6</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col col-lg-2" style="background-color:rgb(185, 30, 160);">
+          col col-lg-2
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
