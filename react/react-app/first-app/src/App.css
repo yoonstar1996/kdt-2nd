@@ -156,3 +156,36 @@
   z-index: 2;
   position: relative;
 }
+
+.wrapper{
+  background-color: rgb(235, 235, 130);
+  width: 500px;
+  height: 550px;
+}
+.title, .content, .author, .price, .type{
+  text-align: center;
+}
+.book{
+  width: 200px;
+  height: 250px;
+  display: block;
+  margin: 10px auto;
+
+}
+
+.title{
+  color: red;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 20px 0;
+}
+.content{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.author, .price, .type{
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 15px 0;
+}
