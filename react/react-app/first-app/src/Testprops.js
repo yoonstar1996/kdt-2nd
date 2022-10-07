@@ -30,6 +30,7 @@ import { Component } from "react";
 
 class Testprops extends Component {
   render() {
+    
     let { text, valid } = this.props;
 
     return (

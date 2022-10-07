@@ -5,7 +5,8 @@ import "./App.css";
 // import ClassComponent from "./ClassComponent";
 // import Test from "./Test";
 // import Test2 from "./Test2";
-import Testprops from "./Testprops";
+// import Testprops from "./Testprops";
+import Handler from "./Handler";
 
 ///2022-10-05 리액트 수업////
 // function App() {
@@ -96,31 +97,40 @@ import Testprops from "./Testprops";
 //   );
 // }
 
-////2022-10-06 리액트 수업////
+// function App() {
+//   function msg() {
+//     console.log("콘솔 띄우기 성공!");
+//   };
+//   return (
+//     <>
+//       {/* <div>kdt 2기</div> */}
+//       {/* <FunctionComponent title="1" name="윤경민">자식</FunctionComponent>
+//       <FunctionComponent title="bbb" />
+//       <ClassComponent title="cccc"></ClassComponent> */}
+//       {/* <Test></Test>
+//        <Test2></Test2> */}
+//       {/* <Testprops food="햄버거"></Testprops><br></br>
+//       <Testprops></Testprops> */}
+//       {/* <Testprops
+//         title="이번주 베스트셀러"
+//         author="김유진"
+//         price="13,500원"
+//         type="자기계발서"
+//       ></Testprops> */}
+//       <Testprops
+//         text="App컴포넌트에서 넘겨준 text props입니다."
+//         valid={msg}
+//       ></Testprops>
+//     </>
+//   );
+// }
+
 function App() {
-  function msg() {
-    console.log("콘솔 띄우기 성공!");
-  };
   return (
     <>
-      {/* <div>kdt 2기</div> */}
-      {/* <FunctionComponent title="1" name="윤경민">자식</FunctionComponent>
-      <FunctionComponent title="bbb" />
-      <ClassComponent title="cccc"></ClassComponent> */}
-      {/* <Test></Test>
-       <Test2></Test2> */}
-      {/* <Testprops food="햄버거"></Testprops><br></br>
-      <Testprops></Testprops> */}
-      {/* <Testprops
-        title="이번주 베스트셀러"
-        author="김유진"
-        price="13,500원"
-        type="자기계발서"
-      ></Testprops> */}
-      <Testprops
-        text="App컴포넌트에서 넘겨준 text props입니다."
-        valid={msg}
-      ></Testprops>
+      {/* <ClassComponent></ClassComponent> */}
+      {/* <FunctionComponent></FunctionComponent> */}
+      <Handler></Handler>
     </>
   );
 }
