@@ -6,7 +6,7 @@ import "./App.css";
 // import Test from "./Test";
 // import Test2 from "./Test2";
 // import Testprops from "./Testprops";
-import Handler from "./Handler";
+// import Handler from "./Handler";
 
 ///2022-10-05 리액트 수업////
 // function App() {
@@ -125,12 +125,304 @@ import Handler from "./Handler";
 //   );
 // }
 
+// function App() {
+//   return (
+//     <>
+//       {/* <ClassComponent></ClassComponent> */}
+//       {/* <FunctionComponent></FunctionComponent> */}
+//       <Handler></Handler>
+//     </>
+//   );
+// }
+
+import { useEffect, useState } from "react";
+
+// function App() {
+//   // let items = list.map((value, id) => {
+//   // console.log("value : ", value);
+//   // console.log("id : ", id);
+//   // return value + id;
+//   // });
+//   // console.log("items : ", items);
+//   // let list = ["a", "b", "c", "d", "e"];
+
+//   let listTemp = [
+//     { id: 1, value: "a" },
+//     { id: 2, value: "b" },
+//     { id: 3, value: "c" },
+//     { id: 4, value: "d" },
+//     { id: 5, value: "e" },
+//   ];
+
+//   let [list, setList] = useState(listTemp);
+//   let [inputValue, setInput] = useState("");
+//   let [inputId, setInputId] = useState(list.length + 1);
+
+//   // let animals = ["dog", "tutle", "rabbit"];
+//   // let newAnimals = animals.filter((animal) => {
+//   //   return animal.length > 3;
+//   // });
+//   // console.log(newAnimals);
+
+//   return (
+//     <>
+//       <input
+//         type="text"
+//         value={inputValue}
+//         onChange={(e) => {
+//           setInput(e.target.value);
+//         }}
+//       ></input>
+//       <button
+//         type="button"
+//         onClick={() => {
+//           let newList = list.concat({ id: inputId, value: inputValue });
+//           setList(newList);
+//           setInput("");
+//           setInputId(inputId + 1);
+//         }}
+//       >
+//         추가
+//       </button>
+//       <ol>
+//         {list.map((value) => {
+//           return (
+//             <li
+//               key={value.id}
+//               onDoubleClick={(e) => {
+//                 let newList = list.filter((value2) => {
+//                   console.log(e.target);
+//                   return value2.id !== value.id;
+//                 });
+//                 setList(newList);
+//               }}
+//             >
+//               {value.value}
+//             </li>
+//           );
+//         })}
+//       </ol>
+//     </>
+//   );
+// }
+
+// function App() {
+//   let nameTemp = [
+//     { id: 1, value: "코디" },
+//     { id: 2, value: "윤소희" },
+//   ];
+
+//   let emailTemp = [
+//     { id: 1, value: "codi@gmail.com" },
+//     { id: 2, value: "yoonsohee@gmail.com" },
+//   ];
+
+//   let [name, setName] = useState(nameTemp);
+//   let [nameValue, setNv] = useState("");
+//   let [nameId, setNameId] = useState(name.length + 1);
+
+//   let [email, setEmail] = useState(emailTemp);
+//   let [emailValue, setEv] = useState("");
+//   let [emailId, setEmailId] = useState(email.length + 1);
+
+//   function addInfo() {
+//     let newname = name.concat({ id: nameId, value: nameValue });
+//     setName(newname);
+//     setNv("");
+//     setNameId(nameId + 1);
+
+//     let newemail = email.concat({ id: emailId, value: emailValue });
+//     setEmail(newemail);
+//     setEv("");
+//     setEmailId(emailId + 1);
+//   }
+
+//   useEffect(() => {
+//     let email2 = document.querySelector("#email");
+//     email2.addEventListener("keydown", ({ key }) => {
+//       if (key === "Enter") {
+//         addInfo();
+//       }
+//     });
+//   });
+
+//   return (
+//     <>
+//       <input
+//         type="text"
+//         placeholder="이름"
+//         value={nameValue}
+//         onChange={(e) => {
+//           setNv(e.target.value);
+//         }}
+//       ></input>
+//       <input
+//         id="email"
+//         type="text"
+//         placeholder="이메일"
+//         value={emailValue}
+//         onChange={(e) => {
+//           setEv(e.target.value);
+//         }}
+//       ></input>
+//       <button type="button" onClick={addInfo}>
+//         등록
+//       </button>
+//       <ul>
+//         {name.map((value, index) => {
+//           return (
+//             <li
+//               key={value.id}
+//               onDoubleClick={(e) => {
+//                 let newname = name.filter((value2) => {
+//                   console.log(e.target);
+//                   return value2.id !== value.id;
+//                 });
+//                 setName(newname);
+//               }}
+//             >
+//               {value.value + " : " + email[index].value}
+//             </li>
+//           );
+//         })}
+//       </ul>
+//     </>
+//   );
+// }
+
 function App() {
+  let [userInfo, setUserInfo] = useState([]);
+  let [searchInfo, setSearchInfo] = useState([]);
+
+  let [nameValue, setName] = useState("");
+  let [titleValue, setTitle] = useState("");
+  let [nameId, setNameId] = useState(userInfo.length + 1);
+  let [search, setSearch] = useState("");
+
+  let select = document.querySelector(".select");
+
+  function addInfo() {
+    let newInfo = userInfo.concat({
+      id: nameId,
+      writer: nameValue,
+      title: titleValue,
+    });
+    setUserInfo(newInfo);
+    setNameId(nameId + 1);
+    setName("");
+    setTitle("");
+  }
+
+  function searchBtn() {
+    let searchTitle;
+    if (select.value === "writer") {
+      searchTitle = userInfo.filter((val) => {
+        return val.writer.includes(search);
+      });
+    } else if (select.value === "title") {
+      searchTitle = userInfo.filter((val) => {
+        return val.title.includes(search);
+      });
+    }
+
+    setSearchInfo(searchTitle);
+    setSearch("");
+  }
+
+  useEffect(() => {
+    let email2 = document.querySelector("#email");
+    email2.addEventListener("keydown", ({ key }) => {
+      if (key === "Enter") {
+        addInfo();
+      }
+    });
+  });
+
   return (
     <>
-      {/* <ClassComponent></ClassComponent> */}
-      {/* <FunctionComponent></FunctionComponent> */}
-      <Handler></Handler>
+      <div className="top">
+        작성자 :
+        <input
+          type="text"
+          placeholder="작성자"
+          value={nameValue}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        ></input>
+        제목 :
+        <input
+          id="email"
+          type="text"
+          placeholder="제목"
+          value={titleValue}
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
+        ></input>
+        <button type="button" onClick={addInfo}>
+          작성
+        </button>
+      </div>
+      <div className="mid">
+        <select className="select">
+          <option value="writer">작성자</option>
+          <option value="title">제목</option>
+        </select>
+        <input
+          className="search"
+          placeholder="검색"
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        ></input>
+        <button type="button" onClick={searchBtn}>
+          검색
+        </button>
+      </div>
+      <table border="1" cellSpacing="0" cellPadding="10" className="table">
+        <thead>
+          <tr>
+            <td>번호</td>
+            <td>작성자</td>
+            <td>제목</td>
+          </tr>
+        </thead>
+        <tbody>
+          {userInfo.map((value) => {
+            return (
+              <tr key={value.id}>
+                <td>{value.id}</td>
+                <td>{value.writer}</td>
+                <td>{value.title}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+
+      <div>검색결과</div>
+      <table border="1" cellSpacing="0" cellPadding="10" className="table">
+        <thead>
+          <tr>
+            <td>번호</td>
+            <td>작성자</td>
+            <td>제목</td>
+          </tr>
+        </thead>
+        <tbody>
+          {searchInfo.map((value) => {
+            return (
+              <tr key={value.id}>
+                <td>{value.id}</td>
+                <td>{value.writer}</td>
+                <td>{value.title}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </>
   );
 }

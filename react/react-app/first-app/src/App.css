@@ -157,35 +157,50 @@
   position: relative;
 }
 
-.wrapper{
+.wrapper {
   background-color: rgb(235, 235, 130);
   width: 500px;
   height: 550px;
 }
-.title, .content, .author, .price, .type{
+.title,
+.content,
+.author,
+.price,
+.type {
   text-align: center;
 }
-.book{
+.book {
   width: 200px;
   height: 250px;
   display: block;
   margin: 10px auto;
-
 }
 
-.title{
+.title {
   color: red;
   font-size: 2rem;
   font-weight: 600;
   padding: 20px 0;
 }
-.content{
+.content {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 10px 0;
 }
-.author, .price, .type{
+.author,
+.price,
+.type {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 15px 0;
+}
+
+.top{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+.mid {
+  padding: 10px;
+  margin: 10px;
 }
