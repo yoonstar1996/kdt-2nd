@@ -135,7 +135,7 @@ import "./App.css";
 //   );
 // }
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 // function App() {
 //   // let items = list.map((value, id) => {
@@ -290,141 +290,217 @@ import { useEffect, useState } from "react";
 //   );
 // }
 
-function App() {
-  let [userInfo, setUserInfo] = useState([]);
-  let [searchInfo, setSearchInfo] = useState([]);
+// function App() {
+//   let [userInfo, setUserInfo] = useState([]);
+//   let [searchInfo, setSearchInfo] = useState([]);
 
-  let [nameValue, setName] = useState("");
-  let [titleValue, setTitle] = useState("");
-  let [nameId, setNameId] = useState(userInfo.length + 1);
-  let [search, setSearch] = useState("");
+//   let [nameValue, setName] = useState("");
+//   let [titleValue, setTitle] = useState("");
+//   let [nameId, setNameId] = useState(userInfo.length + 1);
+//   let [search, setSearch] = useState("");
 
-  let select = document.querySelector(".select");
+//   let select = document.querySelector(".select");
 
-  function addInfo() {
-    let newInfo = userInfo.concat({
-      id: nameId,
-      writer: nameValue,
-      title: titleValue,
-    });
-    setUserInfo(newInfo);
-    setNameId(nameId + 1);
-    setName("");
-    setTitle("");
-  }
+//   function addInfo() {
+//     let newInfo = userInfo.concat({
+//       id: nameId,
+//       writer: nameValue,
+//       title: titleValue,
+//     });
+//     setUserInfo(newInfo);
+//     setNameId(nameId + 1);
+//     setName("");
+//     setTitle("");
+//   }
 
-  function searchBtn() {
-    let searchTitle;
-    if (select.value === "writer") {
-      searchTitle = userInfo.filter((val) => {
-        return val.writer.includes(search);
-      });
-    } else if (select.value === "title") {
-      searchTitle = userInfo.filter((val) => {
-        return val.title.includes(search);
-      });
-    }
+//   function searchBtn() {
+//     let searchTitle;
+//     if (select.value === "writer") {
+//       searchTitle = userInfo.filter((val) => {
+//         return val.writer.includes(search);
+//       });
+//     } else if (select.value === "title") {
+//       searchTitle = userInfo.filter((val) => {
+//         return val.title.includes(search);
+//       });
+//     }
 
-    setSearchInfo(searchTitle);
-    setSearch("");
-  }
+//     setSearchInfo(searchTitle);
+//     setSearch("");
+//   }
 
-  useEffect(() => {
-    let email2 = document.querySelector("#email");
-    email2.addEventListener("keydown", ({ key }) => {
-      if (key === "Enter") {
-        addInfo();
-      }
-    });
-  });
+//   useEffect(() => {
+//     let email2 = document.querySelector(".email");
+//     email2.addEventListener("keydown", ({ key }) => {
+//       if (key === "Enter") {
+//         addInfo();
+//       }
+//     });
+//   });
 
-  return (
-    <>
-      <div className="top">
-        작성자 :
-        <input
-          type="text"
-          placeholder="작성자"
-          value={nameValue}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        ></input>
-        제목 :
-        <input
-          id="email"
-          type="text"
-          placeholder="제목"
-          value={titleValue}
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
-        ></input>
-        <button type="button" onClick={addInfo}>
-          작성
-        </button>
+//   return (
+//     <>
+//       <div className="top">
+//         작성자 :
+//         <input
+//           type="text"
+//           placeholder="작성자"
+//           value={nameValue}
+//           onChange={(e) => {
+//             setName(e.target.value);
+//           }}
+//         ></input>
+//         제목 :
+//         <input
+//           class="email"
+//           type="text"
+//           placeholder="제목"
+//           value={titleValue}
+//           onChange={(e) => {
+//             setTitle(e.target.value);
+//           }}
+//         ></input>
+//         <button type="button" onClick={addInfo}>
+//           작성
+//          </button>
+//        </div>
+//       <div className="mid">
+//         <select className="select">
+//           <option value="writer">작성자</option>
+//           <option value="title">제목</option>
+//         </select>
+//         <input
+//           className="search"
+//           placeholder="검색"
+//           value={search}
+//           onChange={(e) => {
+//             setSearch(e.target.value);
+//           }}
+//         ></input>
+//         <button type="button" onClick={searchBtn}>
+//           검색
+//         </button>
+//       </div>
+//       <table border="1" cellSpacing="0" cellPadding="10" className="table">
+//         <thead>
+//           <tr>
+//             <td>번호</td>
+//             <td>작성자</td>
+//             <td>제목</td>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {userInfo.map((value) => {
+//             return (
+//               <tr key={value.id}>
+//                 <td>{value.id}</td>
+//                 <td>{value.writer}</td>
+//                 <td>{value.title}</td>
+//               </tr>
+//             );
+//           })}
+//         </tbody>
+//       </table>
+
+//       <div>검색결과</div>
+//       <table border="1" cellSpacing="0" cellPadding="10" className="table">
+//         <thead>
+//           <tr>
+//             <td>번호</td>
+//             <td>작성자</td>
+//             <td>제목</td>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {searchInfo.map((value) => {
+//             return (
+//               <tr key={value.id}>
+//                 <td>{value.id}</td>
+//                 <td>{value.writer}</td>
+//                 <td>{value.title}</td>
+//               </tr>
+//             );
+//           })}
+//         </tbody>
+//       </table>
+//     </>
+//   );
+// }
+
+// import RefTest from "./RefTest";
+// import ScrollBox from "./ScrollBox";
+// import React, { Component } from "react";
+// import LifeCycleTest from "./LifeCycleTest";
+
+// function getRandomColor() {
+//   return "#" + Math.floor(Math.random() * 16777215).toString(16);
+// }
+
+// class App extends Component {
+//   state = {
+//     color: "#000000",
+//     value: true,
+//   };
+
+//   handleClick = () => {
+//     this.setState({
+//       color: getRandomColor(),
+//     });
+//   };
+
+//   render() {
+//     return (
+//       <div>
+//         <div>
+//           <button
+//             onClick={() => {
+//               this.setState({ value: !this.state.value });
+//             }}
+//           >
+//             컴포넌트 바껴라!
+//           </button>
+//         </div>
+
+//         <button onClick={this.handleClick}>랜덤 색상</button>
+
+//         {this.state.value ? (
+//           <LifeCycleTest color={this.state.color} />
+//         ) : (
+//           <div />
+//         )}
+//       </div>
+//     );
+//   }
+// }
+
+import React, { Component } from "react";
+import TestComponent from "./TestComponent";
+import LifeCyclePractice from "./LifeCyclePractice";
+
+class App extends Component {
+  state = {
+    value: true,
+  };
+
+  render() {
+    return (
+      <div>
+        <div>
+          <button
+            onClick={() => {
+              this.setState({ value: !this.state.value });
+            }}
+          >
+            컴포넌트 바껴라!
+          </button>
+        </div>
+
+        <hr style={{ margin: "50px 0" }}></hr>
+
+        {this.state.value ? <LifeCyclePractice /> : <TestComponent />}
       </div>
-      <div className="mid">
-        <select className="select">
-          <option value="writer">작성자</option>
-          <option value="title">제목</option>
-        </select>
-        <input
-          className="search"
-          placeholder="검색"
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
-        ></input>
-        <button type="button" onClick={searchBtn}>
-          검색
-        </button>
-      </div>
-      <table border="1" cellSpacing="0" cellPadding="10" className="table">
-        <thead>
-          <tr>
-            <td>번호</td>
-            <td>작성자</td>
-            <td>제목</td>
-          </tr>
-        </thead>
-        <tbody>
-          {userInfo.map((value) => {
-            return (
-              <tr key={value.id}>
-                <td>{value.id}</td>
-                <td>{value.writer}</td>
-                <td>{value.title}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-
-      <div>검색결과</div>
-      <table border="1" cellSpacing="0" cellPadding="10" className="table">
-        <thead>
-          <tr>
-            <td>번호</td>
-            <td>작성자</td>
-            <td>제목</td>
-          </tr>
-        </thead>
-        <tbody>
-          {searchInfo.map((value) => {
-            return (
-              <tr key={value.id}>
-                <td>{value.id}</td>
-                <td>{value.writer}</td>
-                <td>{value.title}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </>
-  );
+    );
+  }
 }
 
 export default App;
