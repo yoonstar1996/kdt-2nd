@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import "./App.css";
+// import "./App.css";
 // import img from "./잔디.jpg";
 // import FunctionComponent from "./FunctionComponent";
 // import ClassComponent from "./ClassComponent";
@@ -473,34 +473,80 @@ import "./App.css";
 //   }
 // }
 
-import React, { Component } from "react";
-import TestComponent from "./TestComponent";
-import LifeCyclePractice from "./LifeCyclePractice";
+// import React, { Component } from "react";
+// import TestComponent from "./TestComponent";
+// import LifeCyclePractice from "./LifeCyclePractice";
 
-class App extends Component {
-  state = {
-    value: true,
-  };
+// class App extends Component {
+//   state = {
+//     value: true,
+//   };
 
-  render() {
-    return (
-      <div>
-        <div>
-          <button
-            onClick={() => {
-              this.setState({ value: !this.state.value });
-            }}
-          >
-            컴포넌트 바껴라!
-          </button>
-        </div>
+//   render() {
+//     return (
+//       <div>
+//         <div>
+//           <button
+//             onClick={() => {
+//               this.setState({ value: !this.state.value });
+//             }}
+//           >
+//             컴포넌트 바껴라!
+//           </button>
+//         </div>
 
-        <hr style={{ margin: "50px 0" }}></hr>
+//         <hr style={{ margin: "50px 0" }}></hr>
 
-        {this.state.value ? <LifeCyclePractice /> : <TestComponent />}
+//         {this.state.value ? <LifeCyclePractice /> : <TestComponent />}
+//       </div>
+//     );
+//   }
+// }
+
+import React, { useState } from "react";
+// import HookTest from "./HookTest";
+import HookTest2 from "./HookTest2";
+import "./App.scss";
+// import TestComponent from "./TestComponent";
+
+// export default function App() {
+//   let [state, setState] = useState({ value: true });
+
+//   const changeBoolean = () => {
+//     setState((check: boolean) => !check);
+//   };
+//   return (
+//     <div>
+//       <div>
+//         <button onClick={changeBoolean}>컴포넌트 바껴라!</button>
+//       </div>
+
+//       <hr style={{ margin: "50px 0" }}></hr>
+
+//       {state ? <HookTest /> : <TestComponent />}
+//     </div>
+//   );
+// }
+
+export default function App() {
+  return (
+    <>
+      {/* <HookTest></HookTest> */}
+      {/* <HookTest2></HookTest2> */}
+      {/* <div className="SassTest">
+        <div className="box red"></div>
+        <div className="box orange"></div>
+        <div className="box yellow"></div>
+        <div className="box green"></div>
+        <div className="box skyblue"></div>
+        <div className="box blue"></div>
+        <div className="box puple"></div>
+      </div> */}
+      <div className="SassTest">
+        <div className="pink"></div>
+        <div className="yellow"></div>
+        <div className="green"></div>
       </div>
-    );
-  }
+    </>
+  );
 }
-
-export default App;
