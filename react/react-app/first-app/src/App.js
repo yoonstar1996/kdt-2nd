@@ -528,25 +528,33 @@ import "./App.scss";
 //   );
 // }
 
+// export default function App() {
+//   return (
+//     <>
+//       {/* <HookTest></HookTest> */}
+//       {/* <HookTest2></HookTest2> */}
+//       {/* <div className="SassTest">
+//         <div className="box red"></div>
+//         <div className="box orange"></div>
+//         <div className="box yellow"></div>
+//         <div className="box green"></div>
+//         <div className="box skyblue"></div>
+//         <div className="box blue"></div>
+//         <div className="box puple"></div>
+//       </div> */}
+//       <div className="SassTest">
+//         <div className="pink"></div>
+//         <div className="yellow"></div>
+//         <div className="green"></div>
+//       </div>
+//     </>
+//   );
+// }
+
 export default function App() {
   return (
     <>
-      {/* <HookTest></HookTest> */}
-      {/* <HookTest2></HookTest2> */}
-      {/* <div className="SassTest">
-        <div className="box red"></div>
-        <div className="box orange"></div>
-        <div className="box yellow"></div>
-        <div className="box green"></div>
-        <div className="box skyblue"></div>
-        <div className="box blue"></div>
-        <div className="box puple"></div>
-      </div> */}
-      <div className="SassTest">
-        <div className="pink"></div>
-        <div className="yellow"></div>
-        <div className="green"></div>
-      </div>
+      <div>App</div>
     </>
   );
 }
