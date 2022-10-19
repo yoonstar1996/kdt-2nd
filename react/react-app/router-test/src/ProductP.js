@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  useParams,
-  useLocation,
-  useSearchParams,
-  useNavigate,
-} from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function Product() {
   const { id } = useParams(); // { id: 1 }
-
-  const location = useLocation();
-
-  let [searchParam, setSearchParam] = useSearchParams();
 
   let navigate = useNavigate();
 

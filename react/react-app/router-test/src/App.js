@@ -5,13 +5,17 @@ import Nav from "./Nav";
 import Content from "./Content";
 import Footer from "./Footer";
 import { BrowserRouter } from "react-router-dom";
+import Sticky from "./Sticky";
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
         <Nav />
-        <Content />
+        <div className="container">
+          <Content />
+          <Sticky />
+        </div>
         <Footer />
       </BrowserRouter>
     </>

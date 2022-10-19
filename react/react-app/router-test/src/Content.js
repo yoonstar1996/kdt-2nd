@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 import ProductP from "./ProductP";
 import MainP from "./MainP";
 
