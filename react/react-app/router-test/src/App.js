@@ -6,6 +6,7 @@ import Content from "./Content";
 import Footer from "./Footer";
 import { BrowserRouter } from "react-router-dom";
 import Sticky from "./Sticky";
+import LifeCycleTest from "../../first-app/src/LifeCycleTest";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <BrowserRouter>
         <Nav />
         <div className="container">
+          <LifeCycleTest></LifeCycleTest>
           <Content />
           <Sticky />
         </div>
